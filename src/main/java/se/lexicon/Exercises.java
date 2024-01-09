@@ -4,6 +4,7 @@ import se.lexicon.data.DataStorage;
 import se.lexicon.model.Gender;
 import se.lexicon.model.Person;
 
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Exercises {
@@ -65,6 +66,9 @@ public class Exercises {
     public static void exercise5(String message) {
         System.out.println(message);
         //Write your code here
+        Predicate<Person> find456 = (person) -> person.getId() == 456;
+        //Function<Person,String> find456 = (person) -> String.valueOf(person.getId() == 456);
+        System.out.println(storage.findOneAndMapToString(find456,Person::toString));
 
         System.out.println("----------------------");
     }
