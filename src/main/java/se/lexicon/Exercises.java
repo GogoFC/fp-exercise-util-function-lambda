@@ -68,7 +68,9 @@ public class Exercises {
         //Write your code here
         Predicate<Person> find456 = (person) -> person.getId() == 456;
         //Function<Person,String> find456 = (person) -> String.valueOf(person.getId() == 456);
-        System.out.println(storage.findOneAndMapToString(find456,Person::toString));
+        //Function<Person, String> find456Function = Person::getFirstName;
+        Function<Person, String> find456Function = person -> String.valueOf(person.toString());
+        System.out.println(storage.findOneAndMapToString(find456, find456Function));
 
         System.out.println("----------------------");
     }
